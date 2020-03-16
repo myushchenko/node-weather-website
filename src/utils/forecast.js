@@ -13,13 +13,12 @@ const forecast = (latitude, longitude, callback) => {
       callback("Unable to find location!", undefined);
     } else {
       const { currently } = body;
-      const { summary } = body.daily.data[0];
+      const { summary, temperatureHigh, temperatureLow } = body.daily.data[0];
       callback(
         undefined,
-        `${summary} Наразі ${
-          currently.temperature
-        } градусів. Ймовірність дощу становить ${currently.precipProbability *
-          100}%.`
+        `${summary} Наразі ${currently.temperature} градусів. 
+        Масимальна температура ${temperatureHigh}, мінімальна ${temperatureLow}.
+        Ймовірність дощу становить ${currently.precipProbability * 100}%.`
       );
     }
   });
