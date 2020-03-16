@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/weather";
+const API_URL = "/weather";
 
 const weatherForm = document.querySelector("form");
 const searchInput = document.querySelector("input");
